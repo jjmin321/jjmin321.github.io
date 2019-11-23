@@ -20,7 +20,7 @@ title                    : "제정민의 Github Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "제정민 (Jeongmin Je)"
-description              : "This blog is GOD"
+description              : "This blog is about development"
 url                      : "https://jjmin321.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
