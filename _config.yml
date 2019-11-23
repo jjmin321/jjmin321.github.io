@@ -27,7 +27,7 @@ repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-m
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/image/Golang.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+ breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
@@ -98,7 +98,7 @@ social:
 
 # Analytics
 analytics:
-  #provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
     anonymize_ip         : # true, false (default)
@@ -110,7 +110,7 @@ author: "제정민 (Jeongmin Je)"
   avatar           : "/assets/images/Golang.png"
   bio              : "I wanna be a Back-End Developer"
   location         : "Daegu Software Highschool"
-  email            : # "jjmin321@naver.com"
+  email            : "jjmin321@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
