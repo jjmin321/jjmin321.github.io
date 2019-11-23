@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "JEONGMIN'S GitHub BloG"
+title                    : "JEONGMIN'S GitHub Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "JeongMinJe"
@@ -105,16 +105,16 @@ analytics:
 
 
 # Site Author
-author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+author: "제정민 (Jeongmin Je)"
+  name             : "제정민 (Jeongmin Je)"
+  avatar           : "/assets/images/Golang.jpg"
+  bio              : "I wanna be a Back-End Developer"
+  location         : "Daegu Software Highschool"
+  email            : "jjmin321@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: jjmin321@naver.com
+      url: "jjmin321@naver.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -142,7 +142,7 @@ footer:
       url: "https://www.facebook.com/profile.php?id=100028649371922"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: https://github.com/jjmin321
+      url: "https://github.com/jjmin321"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
