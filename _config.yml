@@ -109,8 +109,8 @@ analytics:
 author:
   name             : "제정민 (Jeongmin Je)"
   avatar           : "assets/images/이호테우해변.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am Daegu software highschool student."
-  location         : "DAEGU Software Highschool"
+  bio              : "I am Daegu software highschool student. I'm interested in Front-End and Back-End. My first programming language is GO"
+  location         : "Daegu Software Highschool"
   email            :
   links:
     - label: "Email"
