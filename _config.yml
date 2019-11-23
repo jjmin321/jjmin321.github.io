@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -108,8 +108,8 @@ analytics:
 # Site Author
 author:
   name             : "제정민 (Jeongmin Je)"
-  avatar           : "/assets/images/Golang.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I wanna be a Back-End developer"
+  avatar           : "/assets/images/이호테우해변.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I am Daegu software highschool student."
   location         : "DAEGU Software Highschool"
   email            :
   links:
@@ -126,8 +126,8 @@ author:
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/profile.php?id=100028649371922"
     - label: "GitHub"
-      icon: "https://github.com/jjmin321"
-      # url: "https://github.com/"
+      icon: "fab fa-fw fa-github"
+      url : "https://github.com/jjmin321"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
