@@ -110,7 +110,7 @@ author: "제정민 (Jeongmin Je)"
   avatar           : "/assets/images/Golang.png"
   bio              : "I wanna be a Back-End Developer"
   location         : "Daegu Software Highschool"
-  email            : "jjmin321@naver.com"
+  email            : # "jjmin321@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
