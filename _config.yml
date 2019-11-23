@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mistakes/minimal-mistakes"
+remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author: "제정민 (Jeongmin Je)"
   name             : "제정민 (Jeongmin Je)"
-  avatar           : "/assets/images/Golang.jpg"
+  avatar           : "/assets/images/Golang.png"
   bio              : "I wanna be a Back-End Developer"
   location         : "Daegu Software Highschool"
   email            : "jjmin321@naver.com"
