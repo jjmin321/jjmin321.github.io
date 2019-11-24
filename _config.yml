@@ -108,14 +108,14 @@ analytics:
 # Site Author
 author: 
   name             : "제정민 (Jeongmin Je)"
-  avatar           : "assets/images/이호테우해변.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "assets/images/이호테우해변.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "저는 백-엔드에 관심이 있는 대구소프트웨어고등학교에 진학중인 1학년 제정민입니다.                 I'm Daegu Software Highschool student Jeongmin Je in first grade."
   location         : "Daegu Software Highschool"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "jjmin321@naver.com"
+     #  url: "jjmin321@naver.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
