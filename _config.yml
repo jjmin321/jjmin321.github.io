@@ -106,7 +106,7 @@ analytics:
 
 
 # Site Author
-author:
+author: "제정민 (Jeongmin Je)"
   name             : "제정민 (Jeongmin Je)"
   avatar           : "assets/images/이호테우해변.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "저는 프론트, 백 엔드 관심이 있는 대구소프트웨어고등학교에 진학중인 1학년 제정민입니다.       I am Daegu software highschool student. I'm interested in Front-End and Back-End.
