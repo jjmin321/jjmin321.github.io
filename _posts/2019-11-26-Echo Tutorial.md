@@ -1,5 +1,5 @@
 ---
-title: "웹 프레임워크 Echo 기초(나의 공부를 위해서)"
+title: "Echo Tutorial"
 date: 2019-11-26 08:30:28 -0400
 categories: Development
 ---
@@ -136,4 +136,3 @@ func save(c echo.Context) error {
 }
 ```
 
-# 
