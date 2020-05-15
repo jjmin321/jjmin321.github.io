@@ -3,7 +3,8 @@ title: "Translate api 사용법 2020-05-15"
 date: 2020-05-15 11:15:28 -0400
 categories: Development
 ---
-
+🖲️TRANSLATE_API - 5/14/2020 ~ 5/16/2020🖲️
+🚆사용자가 원본 언어, 사용할 언어, 텍스트를 보내주면 그에 맞는 번역값을 리턴해주는 API🚆
 ## /translate
 1. 파라미터를 통해 source, target, text 값을 발신받아 저장.
 ```go
