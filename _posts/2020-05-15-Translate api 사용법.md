@@ -1,5 +1,5 @@
 ---
-title: "Jwt api 사용법 2020-05-15"
+title: "Translate api 사용법 2020-05-15"
 date: 2020-05-15 11:15:28 -0400
 categories: Development
 ---
