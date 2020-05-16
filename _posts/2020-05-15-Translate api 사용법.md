@@ -15,7 +15,7 @@ data.Set("target", target)
 data.Set("text", text)
 ```
 
-2. 네이버 API 클라이언트 ID, Secret을 본인의 것으로 등록
+2. 네이버 API 클라이언트 ID, Secret을 본인 것으로 등록
 Default: 없음 (env 파일을 통해 사용 추천)
 ```go
 req.Header.Add("X-Naver-Client-Id", clientID)
