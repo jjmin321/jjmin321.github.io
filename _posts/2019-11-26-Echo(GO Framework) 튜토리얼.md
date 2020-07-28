@@ -1,5 +1,5 @@
 ---
-title: "Echo 튜토리얼 2019-11-26"
+title: "Echo(GO Framework) 튜토리얼 2019-11-26"
 date: 2019-11-26 08:30:28 -0400
 categories: Development
 ---
