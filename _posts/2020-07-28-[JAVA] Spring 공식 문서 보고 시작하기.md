@@ -29,6 +29,7 @@ categories: Development
     - Java/Controller는 클라이언트가 요청한 방식, 데이터를 받아서 로직을 통해 처리함
     - Resources/Static에는 정적파일들을 넣어 사용할 수 있다.
     - Resources/Templates는 정적파일들을 넣지만 컨트롤러와 연동하여 동적으로 사용할 수 있다.
+    
 ```
 src/main    
 │
