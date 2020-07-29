@@ -24,45 +24,68 @@ categories: Development
     - Spring Web Service
 
 ## 스프링의 구조 
-프로젝트폴더 하단 src/main에 보면 java 폴더, resource 폴더가 있다. 
+- MVC 패턴이 고정되어있으며 아래와 같은 폴더 구조를 보인다. 
+    - Java/Application은 SpringApplication을 실행하는 메인 클래스를 포함
+    - Java/Controller는 클라이언트가 요청한 방식, 데이터를 받아서 로직을 통해 처리함
+    - Resources/Static에는 정적파일들을 넣어 사용할 수 있다.
+    - Resources/Templates는 정적파일들을 넣지만 컨트롤러와 연동하여 동적으로 사용할 수 있다.
 ```
-project
-│   README.md
-│   file001.txt    
+src/main    
 │
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
-│   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
+└───Java
+│   └─── hello.hellospring
+│         └───   Controller 
+│         │  Application
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───Resources
+    └─── Static 
+
+    └─── Templates
+    
+    │ application.properties
 ```
 
 ## 스프링에서 정적 파일을 띄우는 법 
-스프링 프로젝트에서 src/main/resources/static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
+Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88656665-a3224900-d10b-11ea-8a21-d9b185cfc235.png">
 
 
-이렇게 MVC중 C인 컨트롤러에 hello 메서드를 만들어주고 return "hello"를 하면 스프링부트가 자동으로 ViewResolver에서 hello 템플릿을 찾아 처리해준다.
+## 스프링으로 정적 파일을 동적으로 만드는 법
+1. hello.hellospring/Controller에서 메서드를 만들어준다. 
+2. return "hello"를 하면 스프링이 Resources/Template에서 hello파일을 찾는다.
+3. hello파일에서 그 메서드에서 사용한 오브젝트를 사용할 수 있게 해준다.
 
 ```java
+// hello.hellospring/Controller/HelloController , 컨트롤러 파일
 @Controller
 public class HelloController {
 
     @GetMapping("hello")
     public String hello(Model model) {
+        // String data = new String("hello")랑 같음 
+        // 스프링에서 사용하는 Key-Value형식 오브젝트 변수
         model.addAttribute("data", "hello!");
         return "hello";
     }
 }
+```
+
+```html
+ <!-- Resources/Templates/hello.html , 정적 파일 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring Welcome Page</title>
+</head>
+
+<body>
+<!-- hello 메서드에서 선언한 data 객체를 사용할 수 있다 -->
+<p th:text="'안녕하세요' + ${data}" >안녕하세요. NULL</p>
+</body>
+</html>
 ```
 
 ## 스프링 빌드 방법
