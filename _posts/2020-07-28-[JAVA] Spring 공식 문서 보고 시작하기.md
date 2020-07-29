@@ -56,7 +56,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
 
 ## 스프링으로 정적 파일을 동적으로 만드는 법
 - 쿼리 파라미터로 값 받아서 그에 맞는 다른 값을 서버에서 반환해주는 예시
-    1. hello.hellospring/Controller에서 hello 메서드를 만들어준다. 
+    - hello.hellospring/Controller에서 hello 메서드를 만들어준다. 
 
     ```java
     @Controller
@@ -68,7 +68,8 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
         }
     }
     ```
-    2. return "hello"를 한 메서드의 오브젝트 변수를 스프링이 Resources/Template/hello.html 파일을 찾아 사용할 수 있게 해준다.
+    - return "hello"를 한 메서드의 오브젝트 변수를 스프링이 Resources/Template/hello.html 파일을 찾아 사용할 수 있게 해준다.
+
     ```html
     <!DOCTYPE html>
     <html xmlns:th="http://www.thymeleaf.org">
@@ -81,6 +82,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     </html>
     ```
     <br>
+    - localhost:8080?name=제정민 을 입력하면 내가 원한대로 동작이 된다.
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88768162-a3771e80-d1b5-11ea-9a01-ffac020adb48.png">
 
 ## 스프링 빌드 방법
