@@ -29,7 +29,7 @@ categories: Development
     - Java/Controller는 클라이언트가 요청한 방식, 데이터를 받아서 로직을 통해 처리함
     - Resources/Static에는 정적파일들을 넣어 사용할 수 있다.
     - Resources/Templates는 정적파일들을 넣지만 컨트롤러와 연동하여 동적으로 사용할 수 있다.
-    
+
 ```
 src/main    
 │
@@ -50,44 +50,38 @@ src/main
 Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
+<br>
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88656665-a3224900-d10b-11ea-8a21-d9b185cfc235.png">
 
 
 ## 스프링으로 정적 파일을 동적으로 만드는 법
-1. hello.hellospring/Controller에서 메서드를 만들어준다. 
-2. return "hello"를 하면 스프링이 Resources/Template에서 hello파일을 찾는다.
-3. hello파일에서 그 메서드에서 사용한 오브젝트를 사용할 수 있게 해준다.
+- 쿼리 파라미터로 값 받아서 그에 맞는 다른 값을 서버에서 반환해주는 예시
+    1. hello.hellospring/Controller에서 hello 메서드를 만들어준다. 
+    ```java
 
-```java
-// hello.hellospring/Controller/HelloController , 컨트롤러 파일
-@Controller
-public class HelloController {
-
-    @GetMapping("hello")
-    public String hello(Model model) {
-        // String data = new String("hello")랑 같음 
-        // 스프링에서 사용하는 Key-Value형식 오브젝트 변수
-        model.addAttribute("data", "hello!");
-        return "hello";
+    @Controller
+    public class HelloController {
+        @GetMapping("hello")
+        public String hello(@RequestParam("name") String name, Model model) {
+            model.addAttribute("name", name);
+            return "hello";
+        }
     }
-}
-```
-
-```html
- <!-- Resources/Templates/hello.html , 정적 파일 -->
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <title>Spring Welcome Page</title>
-</head>
-
-<body>
-<!-- hello 메서드에서 선언한 data 객체를 사용할 수 있다 -->
-<p th:text="'안녕하세요' + ${data}" >안녕하세요. NULL</p>
-</body>
-</html>
-```
+    ```
+    2. return "hello"를 한 메서드의 오브젝트 변수를 스프링이 Resources/Template/hello.html 파일을 찾아 사용할 수 있게 해준다.
+    ```html
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Welcome Page</title>
+    </head>
+    <body>
+    <p th:text="'안녕하세요' + ${name}" >안녕하세요. NULL</p>
+    </body>
+    </html>
+    ```
+    <br>
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88768162-a3771e80-d1b5-11ea-9a01-ffac020adb48.png">
 
 ## 스프링 빌드 방법
 빌드를 통해 보통 리눅스를 사용하는 서버 컴퓨터에서 자바 코드를 모두 작성할 필요 없이 빌드파일로 실행이 가능하다.
