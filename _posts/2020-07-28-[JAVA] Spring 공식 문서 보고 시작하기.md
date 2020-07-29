@@ -57,8 +57,8 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
 ## 스프링으로 정적 파일을 동적으로 만드는 법
 - 쿼리 파라미터로 값 받아서 그에 맞는 다른 값을 서버에서 반환해주는 예시
     1. hello.hellospring/Controller에서 hello 메서드를 만들어준다. 
-    ```java
 
+    ```java
     @Controller
     public class HelloController {
         @GetMapping("hello")
