@@ -23,7 +23,28 @@ categories: Development
     - Thymeleaf Template engine
     - Spring Web Service
 
-# 스프링에서 정적 파일을 띄우는 법 
+## 스프링의 구조 
+프로젝트폴더 하단 src/main에 보면 java 폴더, resource 폴더가 있다. 
+```
+project
+│   README.md
+│   file001.txt    
+│
+└───folder1
+│   │   file011.txt
+│   │   file012.txt
+│   │
+│   └───subfolder1
+│       │   file111.txt
+│       │   file112.txt
+│       │   ...
+│   
+└───folder2
+    │   file021.txt
+    │   file022.txt
+```
+
+## 스프링에서 정적 파일을 띄우는 법 
 스프링 프로젝트에서 src/main/resources/static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
@@ -59,3 +80,5 @@ public class HelloController {
 
 4. java -jar (파일) 명령어로 SPRING을 빌드할 수 있다.
 <img width="1383" alt="image" src="https://user-images.githubusercontent.com/52072077/88643189-5e42e600-d0fc-11ea-99db-50bf7bd6adfc.png">
+
+## MVC 패턴 및 템플릿 엔진 
