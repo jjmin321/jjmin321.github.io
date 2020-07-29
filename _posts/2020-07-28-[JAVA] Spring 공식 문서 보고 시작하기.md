@@ -1,5 +1,5 @@
 ---
-title: "Spring 공식 문서 보고 시작하기 2020-07-28"
+title: "[JAVA] Spring 공식 문서 보고 시작하기 2020-07-28"
 date: 2020-07-28 11:15:28 -0400
 categories: Development
 ---
@@ -7,28 +7,31 @@ categories: Development
 # 🏄‍♂️ Spring Tutorial 7/28/2020 ~ 8/4/2020 🏄‍♂️
 🔖 https://spring.io/projects/spring-boot라는 스프링 공식 사이트의 문서를 참조하였습니다. 🔖
 
-## 스프링 웹 개발 
+## 👨‍💻스프링 웹 개발 👨‍💻
 예전에는 JSP, PHP같은 정적 코드를 동적으로 꾸며주는 웹 서버가 주로 개발되었지만 
 최근에는 NodeJS, Spring, Django를 이용하여 API 방식을 통해 필요한 데이터만 처리해준다. 
 우리나라의 대부분의 기업들이 Spring을 서버 개발자의 기본 사항으로 여기며 배우기에는 어렵지만 배워놓으면 매우 좋은 프레임워크라서 시작하게 되었다.
 
-#### 작업 환경 
-- Mac Os Mojave 10.14.6
-- Java 8 
-- InteliJ 2020.1.4
+- 작업 환경 
+    - Mac Os Mojave 10.14.6
+    - Java 8 
+    - InteliJ 2020.1.4
     
-#### 작업 설정 (https://start.spring.io)
-- Spring Boot 2.3.2
-- Maven Project
-- Thymeleaf Template engine
-- Spring Web Service
+- 작업 설정 (https://start.spring.io)
+    - Spring Boot 2.3.2
+    - Maven Project
+    - Thymeleaf Template engine
+    - Spring Web Service
 
-### 스프링에서 정적 파일을 띄우는 법 
+# 스프링에서 정적 파일을 띄우는 법 
 스프링 프로젝트에서 src/main/resources/static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88656665-a3224900-d10b-11ea-8a21-d9b185cfc235.png">
+
+
 이렇게 MVC중 C인 컨트롤러에 hello 메서드를 만들어주고 return "hello"를 하면 스프링부트가 자동으로 ViewResolver에서 hello 템플릿을 찾아 처리해준다.
+
 ```java
 @Controller
 public class HelloController {

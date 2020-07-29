@@ -1,5 +1,5 @@
 ---
-title: "Network에 대해서 (나의 공부를 위해서) 2019-11-24"
+title: "[NETWORK] Network 공부 2019-11-24"
 date: 2019-11-24 00:01:28 -0400
 categories: Development
 ---

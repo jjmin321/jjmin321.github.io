@@ -1,5 +1,5 @@
 ---
-title: "Google Oauth 작동 원리 2020-05-19"
+title: "[Oauth2] Google계정으로 로그인의 원리 2020-05-19"
 date: 2020-05-19 11:15:28 -0400
 categories: Development
 ---
@@ -21,3 +21,5 @@ categories: Development
 8. Resource owner가 구글 게정으로 로그인을 한다면 server에서 해당 Resource owner의 access token을 조회 후 있다면 Resource server에게 전송 , 없다면 Client에서 Resource owner에게 auth login하는 url를 전송
 
 9. Resource server가 access token을 분석 후 값이 일치하다면 server에게 Resource owner의 정보를 전송
+
+10. Server는 받은 값을 토대로 서버 기능을 제공하면 된다.
