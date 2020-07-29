@@ -50,7 +50,7 @@ src/main
 Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
-<br>
+localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hello-static.html이 브라우저에 뜬다.
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88656665-a3224900-d10b-11ea-8a21-d9b185cfc235.png">
 
 
@@ -84,6 +84,34 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     <br>
     - localhost:8080?name=제정민 을 입력하면 내가 원한대로 동작이 된다.
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88768162-a3771e80-d1b5-11ea-9a01-ffac020adb48.png">
+
+## 스프링 @ResponseBody
+메서드 윗단에 @ResponseBody를 붙히면 파일을 불러오지 않고 http응답에 즉시 데이터를 넘긴다.
+
+- 이런 식으로 문자열을 반환하면 html코드로 변환하여 반환된다.
+
+```java
+@GetMapping("hello-spring")
+    @ResponseBody
+    public String helloString(@RequestParam(value = "name", required = false) String name){
+        return "hello" + name;
+    }
+```
+
+- 하지만 이런 식으로 객체를 반환하면 JSON코드로 변환하여 반환된다. 
+
+```java
+@GetMapping("hello-api")
+    @ResponseBody
+    public Hello helloApi(@RequestParam("name") String name) {
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+    }
+```
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88797171-da612a80-d1dd-11ea-9538-b23abbf2b73a.png">
+
 
 ## 스프링 빌드 방법
 빌드를 통해 보통 리눅스를 사용하는 서버 컴퓨터에서 자바 코드를 모두 작성할 필요 없이 빌드파일로 실행이 가능하다.
