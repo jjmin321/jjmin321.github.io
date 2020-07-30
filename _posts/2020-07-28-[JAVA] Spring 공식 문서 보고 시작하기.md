@@ -58,8 +58,8 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 
 
 - 파라미터로 값을 받아 그에 따른 페이지 출력
+    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java
     - hello.hellospring/Controller에서 hello 메서드 생성
-
     ```java
     // src/main/java/hello.hellospring.controller/HelloController.java
     @Controller
@@ -92,7 +92,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 #### HttpMessageConverter : 파일을 찾지 않고 즉시 응답
 
 - 문자열을 반환하면 html코드로 변환하여 반환된다.
-
+    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java
 ```java
 // src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-spring")
@@ -103,7 +103,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 ```
 
 - 객체를 반환하면 JSON코드로 변환하여 반환된다. 
-
+    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java
 ```java
 // src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-api")
@@ -124,7 +124,8 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
     - 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
     - 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
     - 단점 : 적응할 시간이 많이 필요하다.
-
+    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java
+    
 ```java
 // src/test/java/hello.hellospring.repository/HelloSpringApplicationsTests.java
     @Test
