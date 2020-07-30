@@ -58,8 +58,8 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 
 
 - 파라미터로 값을 받아 그에 따른 페이지 출력
-    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java
     - hello.hellospring/Controller에서 hello 메서드 생성
+    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java">HelloController.java</a>
     ```java
     // src/main/java/hello.hellospring.controller/HelloController.java
     @Controller
@@ -92,7 +92,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 #### HttpMessageConverter : 파일을 찾지 않고 즉시 응답
 
 - 문자열을 반환하면 html코드로 변환하여 반환된다.
-    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java
+    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java">HelloController.java</a>
 ```java
 // src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-spring")
@@ -103,7 +103,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 ```
 
 - 객체를 반환하면 JSON코드로 변환하여 반환된다. 
-    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java
+    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java">HelloController.java</a>
 ```java
 // src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-api")
