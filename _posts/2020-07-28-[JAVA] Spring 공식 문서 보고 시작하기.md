@@ -51,7 +51,9 @@ src/main
 Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
+<br>
 localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hello-static.html이 브라우저에 뜬다.
+<br>
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88656665-a3224900-d10b-11ea-8a21-d9b185cfc235.png">
 
 
@@ -68,7 +70,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
         }
     }
     ```
-    - return "hello"를 한 메서드의 오브젝트 변수를 스프링이 Resources/Template/hello.html 파일을 찾아 사용할 수 있게 해준다.
+    - return "hello"를 하면 Resources/Template 폴더 아래의 hello라는 정적파일과 연동이 된다.
 
     ```html
     <!DOCTYPE html>
