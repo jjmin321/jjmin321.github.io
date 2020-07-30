@@ -24,12 +24,12 @@ categories: Development
     - Spring Web Service
 
 ## 스프링의 구조 
-- MVC 패턴이 고정되어있으며 아래와 같은 폴더 구조를 보인다. 
-    - Java/Application은 SpringApplication을 실행하는 메인 클래스를 포함
-    - Java/Controller는 클라이언트가 요청한 방식, 데이터를 받아서 로직을 통해 처리함
-    - Resources/Static에는 정적파일들을 넣어 사용할 수 있다.
-    - Resources/Templates는 정적파일들을 넣지만 컨트롤러와 연동하여 동적으로 사용할 수 있다.
-    - <a href="https://github.com/jjmin321/Spring_studybook" target="_blank">프로젝트 구조</a>
+MVC 패턴이 고정되어있으며 아래와 같은 폴더 구조를 보인다. 
+- Java/Application은 SpringApplication을 실행하는 메인 클래스를 포함
+- Java/Controller는 클라이언트가 요청한 방식, 데이터를 받아서 로직을 통해 처리함
+- Resources/Static에는 정적파일들을 넣어 사용할 수 있다.
+- Resources/Templates는 정적파일들을 넣지만 컨트롤러와 연동하여 동적으로 사용할 수 있다.
+- <a href="https://github.com/jjmin321/Spring_studybook" target="_blank">프로젝트 구조</a>
 
 ```
 src/main    
