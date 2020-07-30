@@ -23,7 +23,7 @@ categories: Development
     - Thymeleaf Template engine
     - Spring Web Service
 
-# 스프링의 구조 
+# ⚗️ 스프링의 구조 ⚗️
 MVC 패턴이 고정되어있으며 아래와 같은 폴더 구조를 보인다. 
 - Java/Application은 SpringApplication을 실행하는 메인 클래스를 포함
 - Java/Controller는 클라이언트가 요청한 방식, 데이터를 받아서 로직을 통해 처리함
@@ -47,8 +47,8 @@ src/main
     │ application.properties
 ```
 
-# 스프링 기본 메서드 -> ViewResolver으로 처리
-### ViewResolver : Resources폴더 하위 파일을 찾는다.
+# 🚇 스프링 기본 메서드 -> ViewResolver으로 처리 🚇
+#### ViewResolver : Resources폴더 하위 파일을 찾는다.
 Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 띄울 수 있다. 
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
@@ -83,7 +83,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     ```
     <br>
 
-# 스프링 @ResponseBody -> HttpMessageConverter로 처리 
+# 🏗️ 스프링 @ResponseBody -> HttpMessageConverter로 처리 🏗️
 ### HttpMessageConverter : 파일을 찾지 않고 즉시 응답
 
 문자열을 반환하면 html코드로 변환하여 반환된다.
@@ -112,7 +112,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     }
 ```
 
-# 스프링 JUnit 프레임워크
+# 🍾 스프링 JUnit 프레임워크 🍾
 개발한 기능을 실행해서 테스트를 해봐야할 때 main메서드 또는 컨트롤러를 통해서 실행한다. 이러한 방법은 준비를 해야하고, 반복 실행을 하기 귀찮으며 여러 테스트를 한 번에 하기 어렵다는 단점이 있다. JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결할 수 있다.
 
 @Test를 붙히면 JUnit이라는 프레임워크가 동작하여 main메서드가 아니더라도 코드를 테스트해볼 수 있다.
@@ -133,7 +133,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     }
 ```
 
-# 스프링 빌드 방법
+# 🏛️ 스프링 빌드 방법 🏛️
 빌드를 통해 보통 리눅스를 사용하는 서버 컴퓨터에서 자바 코드를 모두 작성할 필요 없이 빌드파일로 실행이 가능하다.
 
 1. 프로젝트 폴더 터미널을 통해 ./gradlew build 명령어를 입력한다.
