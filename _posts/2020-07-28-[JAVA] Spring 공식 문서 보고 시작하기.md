@@ -124,8 +124,9 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
     - 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
     - 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
     - 단점 : 적응할 시간이 많이 필요하다.
-    - 소스코드 : https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java
+    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java">HelloSpringApplicationsTests.java</a>
     
+
 ```java
 // src/test/java/hello.hellospring.repository/HelloSpringApplicationsTests.java
     @Test
