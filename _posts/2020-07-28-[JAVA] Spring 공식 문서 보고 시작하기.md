@@ -61,6 +61,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
     - hello.hellospring/Controller에서 hello 메서드 생성
 
     ```java
+    // src/main/java/hello.hellospring.controller/HelloController.java
     @Controller
     public class HelloController {
         @GetMapping("hello")
@@ -93,6 +94,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 - 문자열을 반환하면 html코드로 변환하여 반환된다.
 
 ```java
+// src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-spring")
     @ResponseBody
     public String helloString(@RequestParam(value = "name", required = false) String name){
@@ -103,6 +105,7 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 - 객체를 반환하면 JSON코드로 변환하여 반환된다. 
 
 ```java
+// src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name) {
@@ -114,6 +117,25 @@ localhost:8080/hello-static.html을 주소창에 입력하면 내가 만든 hell
 <br>
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/52072077/88797171-da612a80-d1dd-11ea-9538-b23abbf2b73a.png">
 
+## 스프링 JUnit 프레임워크
+개발한 기능을 실행해서 테스트를 해봐야할 때 main메서드 또는 컨트롤러를 통해서 실행한다. 이러한 방법은 준비를 해야하고, 반복 실행을 하기 귀찮으며 여러 테스트를 한 번에 하기 어렵다는 단점이 있다. JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결할 수 있다.
+
+- @Test를 붙히면 JUnit이라는 프레임워크가 동작하여 main메서드가 아니더라도 코드를 테스트해볼 수 있다.
+    - 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
+    - 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
+    - 단점 : 적응할 시간이 많이 필요하다.
+
+```java
+// src/test/java/hello.hellospring.repository/HelloSpringApplicationsTests.java
+    @Test
+    public void save() {
+        Member member = new Member();
+        member.setName("spring");
+        repository.save(member);
+        Member result = repository.findById(member.getId()).get();
+        Assertions.assertEquals(result, member);
+    }
+```
 
 ## 스프링 빌드 방법
 빌드를 통해 보통 리눅스를 사용하는 서버 컴퓨터에서 자바 코드를 모두 작성할 필요 없이 빌드파일로 실행이 가능하다.
