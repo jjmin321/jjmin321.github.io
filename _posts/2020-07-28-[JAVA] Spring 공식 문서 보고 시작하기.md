@@ -53,10 +53,10 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
 <br>
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/52072077/88655957-81749200-d10a-11ea-9b41-cee51f361c08.png">
 
+파라미터로 값을 받아 그에 따른 페이지 출력
+- hello.hellospring/Controller에서 hello 메서드 생성
+- <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java" target="_blank">HelloController.java</a>
 
-- 파라미터로 값을 받아 그에 따른 페이지 출력
-    - hello.hellospring/Controller에서 hello 메서드 생성
-    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java" target="_blank">HelloController.java</a>
     ```java
     // src/main/java/hello.hellospring.controller/HelloController.java
     @Controller
@@ -68,7 +68,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
         }
     }
     ```
-    - return "hello"를 하면 Resources/Template 폴더 아래의 hello라는 정적파일과 연동이 된다.
+- return "hello"를 하면 Resources/Template 폴더 아래의 hello라는 정적파일과 연동이 된다.
 
     ```html
     <!DOCTYPE html>
@@ -86,8 +86,9 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
 ## 스프링 @ResponseBody -> HttpMessageConverter로 처리 
 #### HttpMessageConverter : 파일을 찾지 않고 즉시 응답
 
-- 문자열을 반환하면 html코드로 변환하여 반환된다.
-    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java" target="_blank">HelloController.java</a>
+문자열을 반환하면 html코드로 변환하여 반환된다.
+- <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java" target="_blank">HelloController.java</a>
+
 ```java
 // src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-spring")
@@ -97,8 +98,9 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     }
 ```
 
-- 객체를 반환하면 JSON코드로 변환하여 반환된다. 
-    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java" target="_blank">HelloController.java</a>
+객체를 반환하면 JSON코드로 변환하여 반환된다. 
+- <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/java/hello/hellospring/controller/HelloController.java" target="_blank">HelloController.java</a>
+
 ```java
 // src/main/java/hello.hellospring.controller/HelloController.java
 @GetMapping("hello-api")
@@ -113,13 +115,12 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
 ## 스프링 JUnit 프레임워크
 개발한 기능을 실행해서 테스트를 해봐야할 때 main메서드 또는 컨트롤러를 통해서 실행한다. 이러한 방법은 준비를 해야하고, 반복 실행을 하기 귀찮으며 여러 테스트를 한 번에 하기 어렵다는 단점이 있다. JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결할 수 있다.
 
-- @Test를 붙히면 JUnit이라는 프레임워크가 동작하여 main메서드가 아니더라도 코드를 테스트해볼 수 있다.
-    - 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
-    - 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
-    - 단점 : 적응할 시간이 많이 필요하다.
-    - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java" target="_blank">HelloSpringApplicationsTests.java</a>
+@Test를 붙히면 JUnit이라는 프레임워크가 동작하여 main메서드가 아니더라도 코드를 테스트해볼 수 있다.
+- 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
+- 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
+- 단점 : 적응할 시간이 많이 필요하다.
+- <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java" target="_blank">HelloSpringApplicationsTests.java</a>
     
-
 ```java
 // src/test/java/hello.hellospring.repository/HelloSpringApplicationsTests.java
     @Test
