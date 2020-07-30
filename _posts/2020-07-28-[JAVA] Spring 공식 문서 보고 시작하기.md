@@ -69,7 +69,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     }
     ```
 - return "hello"를 하면 Resources/Template 폴더 아래의 hello라는 정적파일과 연동이 된다.
-
+- <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/main/resources/templates/hello.html" target="_blank">hello.html</a>
     ```html
     <!DOCTYPE html>
     <html xmlns:th="http://www.thymeleaf.org">
