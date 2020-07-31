@@ -119,6 +119,7 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
 - 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
 - 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
 - 단점 : 적응할 시간이 많이 필요하다.
+- 단점2 : 메서드 실행 순서 보장이 안되므로 한 메서드에서 사용한 객체를 지워줘야함.
 - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java" target="_blank">HelloSpringApplicationsTests.java</a>
     
 ```java
