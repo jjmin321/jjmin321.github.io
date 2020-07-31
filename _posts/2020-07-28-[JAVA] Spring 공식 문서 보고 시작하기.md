@@ -112,14 +112,14 @@ Resources/Static 에 정적 파일을 만들고 톰캣으로 정적 파일을 �
     }
 ```
 
-# 🍾 스프링 JUnit 프레임워크 🍾
+# 🍾 스프링 코드 테스트 🍾
 개발한 기능을 실행해서 테스트를 해봐야할 때 main메서드 또는 컨트롤러를 통해서 실행한다. 이러한 방법은 준비를 해야하고, 반복 실행을 하기 귀찮으며 여러 테스트를 한 번에 하기 어렵다는 단점이 있다. JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결할 수 있다.
 
 @Test를 붙히면 JUnit이라는 프레임워크가 동작하여 main메서드가 아니더라도 코드를 테스트해볼 수 있다.
 - 장점 : 컴파일 에러 뿐만아니라 실행 에러도 잡을 수 있다.
 - 장점2 : 언제든지 어떤 메서드든 테스트할 수 있다. 
 - 단점 : 적응할 시간이 많이 필요하다.
-- 단점2 : 메서드 실행 순서 보장이 안되므로 한 메서드에서 사용한 객체를 지워줘야함.
+- 단점2 : 메서드에서 사용한 객체를 끝나면 지워줘야 한다.
 - <a href="https://github.com/jjmin321/Spring_studybook/blob/master/src/test/java/hello/hellospring/repository/MemoryMemberRepositoryTest.java" target="_blank">HelloSpringApplicationsTests.java</a>
     
 ```java
