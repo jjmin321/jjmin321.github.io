@@ -119,8 +119,8 @@ categories: Development
 2. 기기들은 서로 맥 주소로 기기를 호출한다(사람의 이름과 같음)
 
 # 기기들이 라우터를 통해 어떻게 유동아이피를 받는걸까?
-1. DHCP Client(내 휴대폰) : DHCP Server(라우터)님 88:36:6C:38:FC:50(내 휴대폰 맥 주소, DHCP Client) 인데요. IP주소 주세요!
-2. DHCP Server(내 라우터) : DHCP Client(내 휴대폰)님 8C:56:24:16:3C:40(내 라우터 맥 주소, DHCP Server) 인데요. 192.168.0.4 여기요!
+1. DHCP Client(내 휴대폰) : DHCP Server(라우터)님 88:36:6C:38:FC:50(내 휴대폰 맥 주소, DHCP Client) 인데요. IP주소 주세요
+2. DHCP Server(내 라우터) : DHCP Client(내 휴대폰)님 8C:56:24:16:3C:40(내 라우터 맥 주소, DHCP Server) 입니다. 192.168.0.4 여기 있습니다.
 
 # 포트 (Port)
 1. 포트 범위는 0~65535 까지 있다.
@@ -129,5 +129,7 @@ categories: Development
 		- 443 : https 
     - 1024 ~ 49151 : 잘 알려지지 않은 다른 용도의 프로그램들의 포트 
 	- 49152 ~ 65535 : 유동 포트 , 서버가 클라이언트 식별할 때 쓰는거
+
+# 패킷 
    
     
