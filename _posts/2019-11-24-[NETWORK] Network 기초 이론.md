@@ -4,6 +4,8 @@ date: 2019-11-24 00:01:28 -0400
 categories: Development
 ---
 
+<link rel="stylesheet" href="../markdown.css">
+<div class="markdown-body">
 # 클라이언트/서버 (Client/Server)
 클라이언트는 서버에게 Request를 보내고 서버는 클라이언트에게 Response를 준다. 브라우저는 이를 번역해서 띄운다.
 
@@ -129,5 +131,5 @@ categories: Development
 		- 443 : https 
     - 1024 ~ 49151 : 잘 알려지지 않은 다른 용도의 프로그램들의 포트 
 	- 49152 ~ 65535 : 유동 포트 , 서버가 클라이언트 식별할 때 쓰는거
-   
-    
+
+</div>    
