@@ -1,5 +1,5 @@
 ---
-title: "[BackEnd] BackEnd 기초 이론 2019-11-25"
+title: "[BackEnd] Rest API Server 기초 이론 2019-11-25"
 date: 2019-11-25 00:01:28 -0400
 categories: Development
 ---
