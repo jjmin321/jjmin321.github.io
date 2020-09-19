@@ -6,6 +6,7 @@ categories: Development
 
 <link rel="stylesheet" href="../markdown.css">
 <div class="markdown-body">
+
 # 클라이언트/서버 (Client/Server)
 클라이언트는 서버에게 Request를 보내고 서버는 클라이언트에게 Response를 준다. 브라우저는 이를 번역해서 띄운다.
 
