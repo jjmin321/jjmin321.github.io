@@ -4,9 +4,6 @@ date: 2019-11-25 00:01:28 -0400
 categories: Development
 ---
 
-# 클라이언트/서버 (Client/Server)
-클라이언트는 서버에게 Request를 보내고 서버는 클라이언트에게 Response를 준다. 브라우저는 이를 번역해서 띄운다.
-
 # REST란?
 1. REST의 개념 
 ![rest](https://user-images.githubusercontent.com/52072077/69491134-24b63d00-0ed4-11ea-802c-c58f189f48ac.png)
@@ -31,17 +28,18 @@ categories: Development
     - 데이터가 요청되는 시점에서 자원의 상태 전달(JSON 혹은 XML을 통해 주고받는 것이 일반적)
 
 # HTTP Method (GET, POST, PUT, PATCH, DELETE)
-내용에서 resource는 웹페이지(html), binary data(그림파일, 소리파일), db data(json/xml/html로 render된 data)를 뜻함.
+내용에서 resource는 데이터나 파일을 뜻함.
 1. GET 
     - 서버에게 resource를 보내라고 요청
     - 웹 브라우저에 ~ 를 입력하면 서버가 해당 route에 표시되어야 하는 페이지를 찾아 보여줌.
-    - 서버(혹은 DB)의 resource는 클라이언트로 전달만 될 뿐 변경되지 않는다.
+    - 서버의 resource는 클라이언트로 전달만 될 뿐 변경되지 않아야 함.
     - 웹 브라우저 주소창에 주소를 입력하는 신호는 모두 GET 요청 방식
 
 2. POST 
     - 서버에게 resource를 생성해서 보내라고 요청
     - 회원가입을 하면 DB에 새로운 회원정보가 등록된다.
     - 사진을 업로드하면 그 사진이 웹사이트에 등록된다.
+    - 서버의 resource는 클라이언트에게 전달하기 전 변경이 되어야 함.
 
 3. PUT
     - 서버에게 resource를 업데이트하라고 요청
