@@ -4,7 +4,8 @@ date: 2019-11-25 00:01:28 -0400
 categories: Development
 ---
 
-# REST란?
+# Rest API란?
+<br>
 1. REST의 개념 
 ![rest](https://user-images.githubusercontent.com/52072077/69491134-24b63d00-0ed4-11ea-802c-c58f189f48ac.png)
 
