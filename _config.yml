@@ -33,7 +33,7 @@ words_per_minute         : 200
 author: 
   name             : "제정민"
   avatar           : "assets/images/me.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "저는 소프트웨어개발과에 재학중인 대구소프트웨어고등학교 3학년 제정민입니다 <br> 나이가 핑계가 아닌 무기가 되기 위해 어떤 것이든 기본을 익히는 것이 중요하다 생각합니다"
+  bio              : "저는 소프트웨어개발과에 재학중인 대구소프트웨어고등학교 3학년 제정민입니다 <br> 새롭거나 어려운 기술이라도 개발에 대한 기본을 익히기 위해 열심히 공부하고 성장하려 노력합니다"
   location         : "대구소프트웨어고등학교"
   email            : "jjmin321@naver.com"
   links:
