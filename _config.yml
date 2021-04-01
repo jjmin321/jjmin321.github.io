@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "최선을 다하는 개발자 Blog"
+title                    : "제정민의 Blog"
 title_separator          : "&#124;"
 subtitle                 : "나이가 핑계가 아닌 무기가 되자"
 name                     : "제정민 (Jeongmin Je)"
@@ -26,14 +26,14 @@ baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : jjmin321/jjmin321.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "assets/images/Golang.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "최선을 다하는 개발자 Blog"
+masthead_title           : "제정민의 Blog"
 words_per_minute         : 200
 
 # Site Author
 author: 
   name             : "제정민"
   avatar           : "assets/images/me.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "소프트웨어개발과에 재학중인 3학년 제정민입니다 <br> 나이가 핑계가 아닌 무기가 되기 위해 재능을 탓하지 않고 늘 최선을 다합니다"
+  bio              : "저는 소프트웨어개발과에 재학중인 대구소프트웨어고등학교 3학년 제정민입니다 <br> 나이가 핑계가 아닌 무기가 되기 위해 어떤 것이든 기본을 익히는 것이 중요하다 생각합니다"
   location         : "대구소프트웨어고등학교"
   email            : "jjmin321@naver.com"
   links:
