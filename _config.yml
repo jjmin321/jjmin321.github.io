@@ -111,7 +111,7 @@ author:
   avatar           : "assets/images/me.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "저는 소프트웨어개발과에 진학중인 대구소프트웨어고등학교 3학년 제정민입니다.                     I'm Daegu Software Highschool student Jeongmin in the first grade."
   location         : "Daegu Software Highschool"
-  email            :
+  email            : "jjmin321@naver.com"
   links:
     - label: "jjmin321@naver.com"
       icon: "fas fa-fw fa-envelope-square"
@@ -288,9 +288,9 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
+      # layout: single
+      # author_profile: true
+      # read_time: true
+      # comments: true
+      # share: true
+      # related: true
