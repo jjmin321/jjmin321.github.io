@@ -37,9 +37,6 @@ author:
   location         : "대구소프트웨어고등학교"
   email            : "jjmin321@naver.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: jjmin321@naver.com
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/profile.php?id=100028649371922"
