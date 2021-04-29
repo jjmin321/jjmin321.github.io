@@ -78,15 +78,14 @@ params.put("Data", response);
 
 ## 만약 처리과정에서 Exception이 일어난다면, 그 Exception의 정보를 로그로 출력하기
 
-ExceptionHandler를 사용하면 로그가 자동으로 출력되지만, 서버의 Response 값을 정확히 출력하고 싶어 추가하였다. <br>
-PointCut을 execution을 사용하여 특정 패키지 내 모든 클래스로 지정해준다.
+PointCut을 Exception을 핸들링하는 모든 클래스로 지정해준다.
 ```java
 @Pointcut("execution(* jejeongmin.MakeAnything.common.handler.*.*(..))")
 public void loggingOnlyException() {}
 ```
 
 마지막으로 그에 맞는 Around Advice를 만든다
-```Java
+```java
 @Around("loggingOnlyException()")
 public Response methodLoggingOnlyException(ProceedingJoinPoint joinPoint) throws Throwable {
     ResponseError responseError = (ResponseError) joinPoint.proceed();
