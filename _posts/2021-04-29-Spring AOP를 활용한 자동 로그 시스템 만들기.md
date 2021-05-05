@@ -4,7 +4,7 @@ date: 2021-04-29 00:01:28 -0400
 categories: Development
 ---
 
-Spring AOP와 Aspect를 활용하여 자동 로그 시스템을 구축해봅니다.
+Spring AOP와 Aspect(Around Advice)를 활용하여 자동 로그 시스템을 구축해봅니다.
 <hr/>
 
 # 시스템 구축 단계   
