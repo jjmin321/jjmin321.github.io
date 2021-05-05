@@ -4,7 +4,7 @@ date: 2021-03-30 00:01:28 -0400
 categories: Development
 ---
 
-자바에서 제공하는 인터페이스인 JPA를 알아보고 Entity를 설계해봅니다
+자바에서 제공하는 인터페이스인 JPA를 알아보고 Entity를 설계해봅니다.
 <hr/>
 
 ## [ JPA ]
