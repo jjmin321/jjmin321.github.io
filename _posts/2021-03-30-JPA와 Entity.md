@@ -1,5 +1,5 @@
 ---
-title: "JPA의 기초에 대해 알아보자 2021-03-30"
+title: "JPA와 Entity 2021-03-30"
 date: 2021-03-30 00:01:28 -0400
 categories: Development
 ---
