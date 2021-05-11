@@ -1,5 +1,5 @@
 ---
-title: "XSS, CSRF 2021-05-08"
+title: "XSS, CSRF, SQL Incejtion 2021-05-08"
 date: 2021-05-08 00:01:28 -0400
 categories: Development
 ---
