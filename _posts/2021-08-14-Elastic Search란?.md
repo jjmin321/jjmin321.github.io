@@ -41,9 +41,6 @@ ES 인덱스는 서로 관련되어 있는 문서들의 모임입니다. JSON �
 - 검색 작업 실행
 - 필터링 및 집계 등의 강력하고 다양한 REST API
 
-## Elastic Search에 대한 궁금점 
-- ES는 검색만을 위한 DB 같은 것인가, 또 그렇다면 SQL을 API로 대체하는 개념인가?
-
 ## ES와 RDBMS의 데이터 저장 구조
 
 ![image](https://user-images.githubusercontent.com/52072077/129449055-6d9888ec-897c-4212-ad53-a451fd927b4c.png)
