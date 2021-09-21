@@ -4,8 +4,26 @@ date: 2021-09-12 00:01:28 -0400
 categories: Development
 ---
 
-마이크로서비스 아키텍처는 메시지 브로커를 기반으로 효율적으로 동작합니다. 메시지 브로커의 한 종류인 Rabbit MQ를 직접 사용해보며 배워봅니다.
+마이크로서비스 아키텍처는 이벤트 브로커와 메시지 브로커를 기반으로 효율적으로 동작합니다. 이번 글에서는 메시지 브로커의 한 종류인 Rabbit MQ를 직접 사용해보며 배워봅니다.
 <hr>
 
-## Docker로 띄워봅시다
-기본 포트는 15692 입니다. (왜인지 모름, 공식사이트에선 5672라는데 어찌저찌 해보니 15692로 됐고, https://www.rabbitmq.com/networking.html 사이트를 참조해보면 됨.)
+## Docker로 띄워보기
+아래 명령어를 통해 이미지를 다운받고, 15672 포트로 실행해보겠습니다. (로컬의 15672번 포트를 도커의 15672번 포트, 즉 Rabbit Mq에 포워딩시키고 컨테이너 이름을 blog라고 지었습니다)
+```
+docker pull rabbitmq:3-management
+docker run -p 15672:15672 --name blog rabbitmq:3-management
+```
+![image](https://user-images.githubusercontent.com/52072077/134161866-69247607-97d5-42d0-b7ef-9a001127fa8f.png)
+이렇게 실행 후 15672 포트로 접속했을 때 화면이 정상적으로 출력하면 됩니다. (안 될 경우 도커의 15672번 포트 외 다른 포트로 접속을 시도해보세요)
+<br>
+
+## Queues의 정의
+일단 기본 id와 pw는 guest, guest입니다. 로그인을 하면 이 화면이 출력됩니다. 
+![image](https://user-images.githubusercontent.com/52072077/134162620-c737d197-92c0-487e-9e9f-43bc51287238.png)
+이 화면에 보이는 Queues 가 바로 Rabbit Mq의 핵심적인 역할을 하는 것입니다. 메시지 브로커에서 메시지가 추가되고 처리될 수 있게 해줍니다.
+<br>
+좀 더 쉽게 말하자면 하나의 Rabbit Mq 인스턴스에 여러 개의 Queue를 만들어 처리할 수 있는데, 예를 들면 축구 정보와 관련된 Queue와 야구 정보와 관련된 Queue를 각각 만들어 사용할 수 있다는 뜻입니다.
+
+## Queue 만들기
+Prefix로 TEST를, 축구에 관련된 정보를 담을 거니 SOCCER를 합쳐 TEST_SOCCER라는 이름의 Queue를 만들겠습니다.
+![image](https://user-images.githubusercontent.com/52072077/134164866-ef628606-31df-4c12-b9da-3f26c693dd8f.png)
