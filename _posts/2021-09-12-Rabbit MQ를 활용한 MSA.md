@@ -27,3 +27,10 @@ docker run -p 15672:15672 --name blog rabbitmq:3-management
 ## Queue 만들기
 Prefix로 TEST를, 축구에 관련된 정보를 담을 거니 SOCCER를 합쳐 TEST_SOCCER라는 이름의 Queue를 만들겠습니다.
 ![image](https://user-images.githubusercontent.com/52072077/134164866-ef628606-31df-4c12-b9da-3f26c693dd8f.png)
+Queue를 만들었으니 메세지를 한 번 넣어보겠습니다. 
+![image](https://user-images.githubusercontent.com/52072077/134328416-7b13295b-6ebb-4c3c-a7f4-0cec0d32eab6.png)
+메세지를 넣게 되면 이렇게 Ready에 메세지가 생기게 되고, 이 메세지를 이용해서 특정 처리를 할 수 있게 됩니다.
+![image](https://user-images.githubusercontent.com/52072077/134329316-b8fbc8e2-98cd-4b53-bdaa-0041f02ab2e8.png)
+이렇게 이 Rabbit Mq페이지 상에서 메세지를 만들고, 빼내고, 삭제하는 등의 처리를 할 수 있지만 설명은 그만하고 실제 개발 상에서 어떻게 사용하는지 보여드리겠습니다.
+
+
