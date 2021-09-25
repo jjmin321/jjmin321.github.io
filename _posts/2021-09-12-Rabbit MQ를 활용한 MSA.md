@@ -22,15 +22,14 @@ docker run -p 15672:15672 --name blog rabbitmq:3-management
 ![image](https://user-images.githubusercontent.com/52072077/134162620-c737d197-92c0-487e-9e9f-43bc51287238.png)
 이 화면에 보이는 Queues 가 바로 Rabbit Mq의 핵심적인 역할을 하는 것입니다. 메시지 브로커에서 메시지가 추가되고 처리될 수 있게 해줍니다.
 <br>
-좀 더 쉽게 말하자면 하나의 Rabbit Mq 인스턴스에 여러 개의 Queue를 만들어 처리할 수 있는데, 예를 들면 축구 정보와 관련된 Queue와 야구 정보와 관련된 Queue를 각각 만들어 사용할 수 있다는 뜻입니다.
+좀 더 쉽게 말하자면 하나의 Rabbit Mq 인스턴스에 여러 개의 Queue를 만들어 처리할 수 있는데, A에 관련된 메세지는 A Queue에, B 이벤트에 관련된 메세지는 B Queue에 각각 만들어 사용할 수 있다는 뜻입니다. 
 
 ## Queue 만들기
-Prefix로 TEST를, 축구에 관련된 정보를 담을 거니 SOCCER를 합쳐 TEST_SOCCER라는 이름의 Queue를 만들겠습니다.
-![image](https://user-images.githubusercontent.com/52072077/134164866-ef628606-31df-4c12-b9da-3f26c693dd8f.png)
-Queue를 만들었으니 메세지를 한 번 넣어보겠습니다. 
-![image](https://user-images.githubusercontent.com/52072077/134328416-7b13295b-6ebb-4c3c-a7f4-0cec0d32eab6.png)
-메세지를 넣게 되면 이렇게 Ready에 메세지가 생기게 되고, 이 메세지를 이용해서 특정 처리를 할 수 있게 됩니다.
-![image](https://user-images.githubusercontent.com/52072077/134329316-b8fbc8e2-98cd-4b53-bdaa-0041f02ab2e8.png)
-이렇게 이 Rabbit Mq페이지 상에서 메세지를 만들고, 빼내고, 삭제하는 등의 처리를 할 수 있지만 설명은 그만하고 실제 개발 상에서 어떻게 사용하는지 보여드리겠습니다.
+Prefix로 TEST를 사용하고, Name으로 GO_TO_JAVA를 사용하여 Queue를 만들어 보겠습니다.
+![image](https://user-images.githubusercontent.com/52072077/134671502-47eeb3b2-ca86-43b6-ac23-ae4db46f2b08.png)
+Queue를 만들었으니 만들어진 Queue에 들어가서 메세지를 한 번 넣어보겠습니다. 
+![image](https://user-images.githubusercontent.com/52072077/134671863-fa8b31d3-2884-47ea-bdb8-a3bf3621f8cd.png)
+메세지를 넣게 되면 아래 그래프에 메세지가 추가되는 것을 볼 수 있으며, 이를 통해 실시간으로 메세지에 대해서 모니터링할 수 있습니다.
+![image](https://user-images.githubusercontent.com/52072077/134671983-34e64c32-2814-44ea-ba15-ff112c821bc1.png)
 
 
