@@ -8,13 +8,13 @@ categories: Development
 <hr>
 
 ## Docker로 띄워보기
-아래 명령어를 통해 이미지를 다운받고, 15672 포트로 실행해보겠습니다. (로컬의 15672번 포트를 도커의 15672번 포트, 즉 Rabbit Mq에 포워딩시키고 컨테이너 이름을 blog라고 지었습니다)
+아래 명령어를 통해 이미지를 다운받고, 15672 포트로 실행해보겠습니다. (5672번은 rabbitmq의 기본 포트이고, 15672번은 모니터링 기본 포트입니다)
 ```
 docker pull rabbitmq:3-management
-docker run -p 15672:15672 --name blog rabbitmq:3-management
+docker run -p 5672:5672 -p 15672:15672 --name rabbitmq rabbitmq:3-management
 ```
 ![image](https://user-images.githubusercontent.com/52072077/134161866-69247607-97d5-42d0-b7ef-9a001127fa8f.png)
-이렇게 실행 후 15672 포트로 접속했을 때 화면이 정상적으로 출력하면 됩니다. (안 될 경우 도커의 15672번 포트 외 다른 포트로 접속을 시도해보세요)
+이렇게 실행 후 15672 포트로 접속했을 때 화면이 정상적으로 출력하면 됩니다.
 <br>
 
 ## Queues의 정의
@@ -25,11 +25,72 @@ docker run -p 15672:15672 --name blog rabbitmq:3-management
 좀 더 쉽게 말하자면 하나의 Rabbit Mq 인스턴스에 여러 개의 Queue를 만들어 처리할 수 있는데, A에 관련된 메세지는 A Queue에, B 이벤트에 관련된 메세지는 B Queue에 각각 만들어 사용할 수 있다는 뜻입니다. 
 
 ## Queue 만들기
-Prefix로 TEST를 사용하고, Name으로 GO_TO_JAVA를 사용하여 Queue를 만들어 보겠습니다.
-![image](https://user-images.githubusercontent.com/52072077/134671502-47eeb3b2-ca86-43b6-ac23-ae4db46f2b08.png)
-Queue를 만들었으니 만들어진 Queue에 들어가서 메세지를 한 번 넣어보겠습니다. 
-![image](https://user-images.githubusercontent.com/52072077/134671863-fa8b31d3-2884-47ea-bdb8-a3bf3621f8cd.png)
-메세지를 넣게 되면 아래 그래프에 메세지가 추가되는 것을 볼 수 있으며, 이를 통해 실시간으로 메세지에 대해서 모니터링할 수 있습니다.
-![image](https://user-images.githubusercontent.com/52072077/134671983-34e64c32-2814-44ea-ba15-ff112c821bc1.png)
+모니터링 페이지에서도 자유롭게 Queue를 만들고, 삭제하고 또는 메세지를 보내고 빼내는 작업을 할 수 있습니다. 하지만 실제로 처리할 때는 코드를 거치는 작업이 필요하므로 GO를 사용해서 테스트해보겠습니다. (공식 문서에서 각 언어별로 모두 example 코드를 지원합니다)
+<br>
+```go
+package main
 
+import (
+	"log"
 
+	"github.com/streadway/amqp"
+)
+
+func main() {
+	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	defer conn.Close()
+
+	ch, err := conn.Channel()
+	defer ch.Close()
+
+	q, err := ch.QueueDeclare(
+		"hello", // name
+		false,   // durable
+		false,   // delete when unused
+		false,   // exclusive
+		false,   // no-wait
+		nil,     // arguments
+	)
+}
+```
+<br>
+이렇게 Queue를 생성할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52072077/136680964-b83cc0bf-94a3-4761-91e7-0980d9fe2936.png)
+
+## 메세지 생성하기
+Queue를 만들었으니 해당 Queue를 사용하여 메세지를 퍼블리싱 해보겠습니다.
+<br>
+
+```go
+package main
+
+import (
+	"log"
+
+	"github.com/streadway/amqp"
+)
+
+func main() {
+	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	defer conn.Close()
+
+	ch, err := conn.Channel()
+	defer ch.Close()
+
+	body := "Hello World!"
+	err = ch.Publish(
+		"",     // exchange
+		q.Name, // routing key
+		false,  // mandatory
+		false,  // immediate
+		amqp.Publishing{
+			ContentType: "text/plain",
+			Body:        []byte(body),
+		})
+}
+```
+<br>
+이렇게 메세지를 퍼블리싱할 수 있습니다. 코드를 실행해 보면 아래와 같이 메세지가 생성되는 걸 확인할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52072077/136682291-7ec1d1ea-c71f-4fcd-87e7-0d612cb78853.png)
