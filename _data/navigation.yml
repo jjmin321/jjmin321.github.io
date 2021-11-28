@@ -8,8 +8,8 @@ main:
     url: /home/
   - title: "프로필"
     url: /about/
-  - title: "프로젝트들"
-    url: /project/
+  # - title: "프로젝트들"
+    # url: /project/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
