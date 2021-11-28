@@ -1,14 +1,14 @@
 # main links
 main:
-  - title: "홈 화면"
+  - title: "최근 게시글"
     url: /
-  - title: "제 소개"
-    url: /about/
-  - title: "카테고리"
+  - title: "카테고리 별 게시글"
     url: /categories/
-  - title: "연도 별"
+  - title: "연도 별 게시글"
     url: /home/
-  - title: "프로젝트"
+  - title: "프로필"
+    url: /about/
+  - title: "프로젝트들"
     url: /project/
   # - title: "Sample Collections"
   #   url: /collection-archive/
