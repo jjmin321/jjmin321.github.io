@@ -9,14 +9,14 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "From I.E To NLP"
-title_separator          : "산업공학에서 NLP까지"
+title                    : "제정민의 블로그"
+title_separator          : "백엔드 개발자 제정민의 블로그"
 subtitle                 : 
 name                     : 
-description              : "ML, DL, NLP에 관심있는 산업공학 전공자입니다."
-url                      : "https://inhyeokyoo.github.io/"
+description              : "백엔드 개발자 제정민의 블로그입니다"
+url                      : "https://jjmin321.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "InhyeokYoo/inhyeokyoo.github.io"
+repository               : "jjmin321/jjmin321.github.io"
 teaser                   : # No
 logo                     : 
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -25,12 +25,12 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "inhyeokyoo-github-io" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "jjmin321-github-io" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
-    appid                : 1703766826439211
+    # appid                : 1703766826439211
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
@@ -68,7 +68,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/1530372896823.jpg"
+og_image                 : "/assets/images/Golang.png"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -78,23 +78,23 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
+  # provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : "UA-171621203-1"
+    # tracking_id          : "UA-171621203-1"
     anonymize_ip         : # true, false (default)
 
 
 # Site Author
 author:
-  name             : "Inhyeok Yoo"
-  avatar           : "/assets/images/1530372896823.jpg"
-  bio              : "자연어처리와 머신러닝, 그리고 딥러닝"
-  location         : "Seoul, South Korea"
-  email            :
+  name             : "제정민"
+  avatar           : "/assets/images/Golang.png"
+  bio              : "Java & GO 꼬꼬마 백엔드 엔지니어"
+  location         : "드림어스컴퍼니 (FLO)"
+  email            : "jjmin321@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mkultra1008@gmail.com"
+      # url: "mkultra1008@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -106,10 +106,10 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: 
+      url: "https://github.com/jjmin321"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/inhyeok_yoo/"
+      # url: "https://www.instagram.com/inhyeok_yoo/"
 
 # Site Footer
 footer:
@@ -122,7 +122,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/InhyeokYoo"
+      url: "https://github.com/jjmin321"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -131,7 +131,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/inhyeok_yoo/"
+      # url: "https://www.instagram.com/inhyeok_yoo/"
 
 
 # Reading Files
