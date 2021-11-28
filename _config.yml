@@ -16,30 +16,30 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "제정민의 Blog"
+title                    : "제정민의 블로그"
 title_separator          : "&#124;"
 subtitle                 : "나이가 핑계가 아닌 무기가 되자"
 name                     : "제정민 (Jeongmin Je)"
-description              : "어떤 것이든 개발에 대한 기본을 익히기 위해 노력하고 기록하는 블로그"
+description              : "백엔드 개발자 제정민의 블로그입니다"
 url                      : "https://jjmin321.github.io" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : jjmin321/jjmin321.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "assets/images/Golang.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "제정민의 Blog"
+masthead_title           : "제정민의 블로그그"
 words_per_minute         : 200
 
 # Site Author
 author: 
   name             : "제정민"
   avatar           : "assets/images/me.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "저는 소프트웨어개발과에 재학중인 대구소프트웨어고등학교 3학년 제정민입니다 <br> 백엔드와 CS에 관련된 모든 것들을 배우고 사용하려 노력합니다."
-  location         : "대구소프트웨어고등학교"
+  bio              : "Java & GO 꼬꼬마 백엔드 엔지니어"
+  location         : "드림어스컴퍼니(FLO)"
   email            : "jjmin321@naver.com"
   links:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/profile.php?id=100028649371922"
+      # url: "https://www.facebook.com/profile.php?id=100028649371922"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url : "https://github.com/jjmin321"
@@ -52,7 +52,7 @@ footer:
   links:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      url : "https://www.facebook.com/profile.php?id=100028649371922"
+      # url : "https://www.facebook.com/profile.php?id=100028649371922"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url : "https://github.com/jjmin321"
