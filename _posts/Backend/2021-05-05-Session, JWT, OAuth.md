@@ -1,5 +1,5 @@
 ---
-title: "Session, JWT, OAuth 2021-05-05"
+title: "Session, JWT, OAuth"
 excerpt: "Session, JWT, OAuth에 대해 알아보자"
 toc: true
 toc_sticky: true

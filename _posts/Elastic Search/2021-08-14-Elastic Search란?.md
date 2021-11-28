@@ -1,5 +1,5 @@
 ---
-title: "Elastic Search란? 2021-08-14"
+title: "Elastic Search란?"
 excerpt: "Elastic Search에 대해 알아보자"
 toc: true
 toc_sticky: true

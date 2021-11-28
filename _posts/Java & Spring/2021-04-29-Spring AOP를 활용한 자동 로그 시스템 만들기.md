@@ -1,5 +1,5 @@
 ---
-title: "Spring AOP를 활용한 자동 로그 시스템 만들기 2021-04-29"
+title: "Spring AOP를 활용한 자동 로그 시스템 만들기"
 excerpt: "Spring AOP에 대해 알아보자"
 toc: true
 toc_sticky: true

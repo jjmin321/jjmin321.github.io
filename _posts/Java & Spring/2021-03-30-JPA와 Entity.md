@@ -1,5 +1,5 @@
 ---
-title: "JPA와 Entity 2021-03-30"
+title: "JPA와 Entity"
 excerpt: "자바에서 제공하는 JPA를 알아보자"
 toc: true
 toc_sticky: true

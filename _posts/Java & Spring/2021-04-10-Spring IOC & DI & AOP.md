@@ -1,5 +1,5 @@
 ---
-title: "Spring IOC & DI & AOP 2021-04-10"
+title: "Spring IOC & DI & AOP"
 excerpt: "Spring의 IOC, DI, AOP에 대해 알아보자"
 toc: true
 toc_sticky: true
