@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://inhyeokyoo.github.io/sitemap.xml

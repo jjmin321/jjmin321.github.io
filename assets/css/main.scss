@@ -1,0 +1,10 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+// @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+// @import url(//fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Montserrat:300,400,400i,700|Nanum+Myeongjo:400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
