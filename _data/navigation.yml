@@ -1,17 +1,15 @@
 # main links
 main:
-  - title: "Home"
+  - title: "홈 화면"
     url: /
-  - title: "About author"
+  - title: "제 소개"
     url: /about/
-  - title: "Resume"
-    url: https://inhyeokyoo.notion.site/Inhyeok-Yoo-001ddcd115c4498d84744a2cbb2840fb
-  - title: "Project"
-    url: /project/
-  - title: "Category"
+  - title: "카테고리"
     url: /categories/
-  - title: "TIme Arxiv"
+  - title: "연도 별"
     url: /home/
+  - title: "프로젝트"
+    url: /project/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
