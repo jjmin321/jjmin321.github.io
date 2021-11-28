@@ -11,13 +11,13 @@ categories:
 Spring AOP와 Aspect(Around Advice)를 활용하여 자동 로그 시스템을 구축해봅니다.
 <hr/>
 
-# 시스템 구축 단계   
+# 아래의 순서로 구축을 해보자   
 > 1. 특정 API의 요청이 들어왔을 때 API의 종류를 로그를 출력한다.<br/>
 > 2. 특정 API의 요청에 따른 서버의 Response 값을 추가로 출력한다.<br/>
 > 3. 만약 처리과정에서 Exception이 일어난다면, 그 Exception의 정보를 로그로 출력한다.<br/>
 
 
-## 1. 특정 API의 요청이 들어왔을 때 API의 종류를 출력하기
+## 특정 API의 요청이 들어왔을 때 API의 종류를 출력하기
 
 먼저 @AutoLogging이라는 어노테이션을 추가한다.
 ```java

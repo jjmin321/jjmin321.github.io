@@ -11,7 +11,7 @@ categories:
 자바에서 제공하는 인터페이스인 JPA를 알아보고 Entity를 설계해봅니다.
 <hr/>
 
-## [ JPA ]
+# JPA
 자바 ORM 기술에 대한 표준 명세, 스프링에서 제공하는 것이 아니다<br>
 특정 기능을 하는 라이브러리가 아닌 RDBMS를 사용하는 방식을 정의한 인터페이스이다<br>
 ORM이기 때문에 자바 클래스와 DB테이블을 매핑할 수 있다
@@ -22,12 +22,12 @@ ORM이란?
 작성한 메서드에 맞게 ORM이 SQL을 자동으로 생성해준다
 ```
 
-## [ JPA 동작 과정 ]
+## JPA 동작 방식
 JPA는 애플리케이션과 JDBC 사이에서 동작한다 <br>
 개발자가 JPA를 사용하면, 내부에서 JDBC API를 사용하여 SQL를 호출하여 DB와 통신한다
 ![JPA동작과정](https://user-images.githubusercontent.com/52072077/112945845-c48e7580-916f-11eb-81e3-d4cccecd229d.png)
 
-## [ JPA 특징 ]
+## JPA 특징
 비즈니스 로직에 집중하며 객체지향 개발이 가능함<br>
 자바 객체와 DB 테이블 사이의 매핑 설정을 통해 SQL을 생성함<br>
 지연 로딩, 즉시 로딩과 같은 기법을 개발자가 선택할 수 있게 제공함<br>
@@ -44,7 +44,7 @@ JPA는 애플리케이션과 JDBC 사이에서 동작한다 <br>
 지연 로딩이라면 Member.getTeam()으로 Team 객체를 건드릴 때 Team에 대한 쿼리를 날리지만 즉시 로딩이라면 Member 객체를 가져올 때 Join을 통해 한 번에 Team 객체까지 가져옴
 
 
-## [ JPA 사용 이유 ]
+## JPA를 왜 사용할까?
 SQL 중심 개발에서 벗어나 객체 중심적인 개발이 가능하다<br>
 Spring-data-jpa를 사용한다면 생산성이 더욱 증가한다<br>
 ```
@@ -54,7 +54,7 @@ JPA를 쉽게 사용하기 위해 스프링에서 제공하고 있는 프레임�
 JpaRepository로 똑똑하게 데이터 검색을 할 수 있다
 ```
 
-## [ JPA 엔티티 매핑 방법 ]
+## JPA 엔티티 매핑 방법
 클래스에 @Entity를 붙히면 JPA가 관리하게 되며, DB 테이블과 매핑된다
 ```
 Entity란?
@@ -64,7 +64,7 @@ Entity란?
 속성으로 이루어지기 때문에 자바에서 필드로 구성할 수 있다
 ```
 
-## [ JPA 엔티티 매핑 예시 ]
+### 예시
 ```java
 @Entity(name = "item")
 public class Item {
@@ -106,7 +106,7 @@ Entity를 설계할 때 많이쓰는 매핑정보에 관련된 어노테이션�
 <br>
 @UpdateTimeStamp: 수정 시간을 자동화할때 사용
 
-## [ JPA 엔티티로 테이블 생성 ]
+## JPA 엔티티로 테이블 생성하기
 스프링 부트의 application 파일에 spring.jpa.hibernate.ddl-auto 옵션을 추가한다<br>
 옵션을 추가하게 되면 Hibernate에서 자동으로 DDL을 생성하여 데이터베이스의 테이블 설정을 자동으로 수행해준다<br>
 ```
