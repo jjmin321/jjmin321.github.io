@@ -10,7 +10,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 # Site Settings
 locale                   : "en-US"
 title                    : "제정민의 블로그"
-title_separator          : "백엔드 개발자 제정민의 블로그"
+# title_separator          : "백엔드 개발자 제정민의 블로그"
 subtitle                 : 
 name                     : 
 description              : "백엔드 개발자 제정민의 블로그입니다"
