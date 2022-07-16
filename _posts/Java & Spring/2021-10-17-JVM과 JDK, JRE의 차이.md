@@ -3,7 +3,7 @@ title: "JVM과 JDK, JRE의 차이"
 excerpt: "JVM, JDK, JRE에 대해 알아보자"
 toc: true
 toc_sticky: true
-date: 2022-04-17 00:01:28 -0400
+date: 2021-10-17 00:01:28 -0400
 categories: 
     - Java & Spring
 ---

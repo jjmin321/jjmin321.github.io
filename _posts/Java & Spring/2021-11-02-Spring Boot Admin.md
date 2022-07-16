@@ -3,7 +3,7 @@ title: "Spring Boot Admin"
 excerpt: "Spring Boot Admin에 대해 알아보자"
 toc: true
 toc_sticky: true
-date: 2022-07-10 00:01:28 -0400
+date: 2021-11-02 00:01:28 -0400
 categories: 
     - Java & Spring
 ---
