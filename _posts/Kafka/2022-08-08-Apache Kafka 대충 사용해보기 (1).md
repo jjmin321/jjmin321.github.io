@@ -3,7 +3,7 @@ title: "Apache Kafka 대충 사용해보기 (1)"
 excerpt: "Apache Kafka 대충 사용해보기 (1)"
 toc: true
 toc_sticky: true
-date: 2022-08-08 00:01:28 -0400
+date: 2022-08-07 00:01:28 -0400
 categories: 
     - Kafka
 ---
