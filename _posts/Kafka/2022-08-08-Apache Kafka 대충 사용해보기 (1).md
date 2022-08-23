@@ -29,7 +29,6 @@ categories:
 <img width="772" alt="image" src="https://user-images.githubusercontent.com/52072077/155823809-d7560a70-aa06-4f8f-bfbb-c43b8b2246b7.png">
 
 마지막으로 토픽, 토픽은 메세지를 종류 별로 관리하는 스토리지 역할을 하며 브로커에 배치되어 관리됨. 특정 토픽을 지정하여 메세지를 송수신함으로써 단일 카프카 클러스터에서 여러 유형의 메세지를 중계 가능.
-<img width="763" alt="image" src="https://user-images.githubusercontent.com/52072077/155823907-cfe2a22f-053d-47c7-a6b4-dd9c9d340c79.png">
 
 ## Kafka Topic
 토픽은 위에서 말했듯이, 메세지를 구분하는 단위가 되고 이는 파일시스템의 폴더와 유사함.
@@ -105,7 +104,7 @@ i.e. <b>복수의 컨슈머에 메시지를 전달할 수 있는 장점</b>이 �
 
 실제 Production 환경에서 운영하는 도중에 컨슈머 인스턴스 A에 장애가 발생했다고 가정해보자. A는 제 역할을 못할 것이고 데이터를 수신하는 과정도 중단될 것이다. 
 
-만약 백업용 컨슈머 인스턴스 B가 A를 대체한다면, 기존에 A가 처리하고 있던 offset을 B가 이어받아서 처리할 것이고, A의 장애가 복구되더라도 offset은 A가 가장 마지막에 가지고 있던 offset이 아닌 B가 마지막에 가지고 있떤 offset을 가지게 될 것이다. 
+만약 백업용 컨슈머 인스턴스 B가 A를 대체한다면, 기존에 A가 처리하고 있던 offset을 B가 이어받아서 처리할 것이고, A의 장애가 복구되더라도 offset은 A가 가장 마지막에 가지고 있던 offset이 아닌 B가 마지막에 가지고 있던 offset을 가지게 될 것이다. 
 
 그렇게 된다면 펍/섭 모델을 구현할 수가 없게 된다.
 
@@ -145,3 +144,225 @@ Kafka는 장애가 났을 때 이를 대처하기 위해서 레플리카를 사�
 프로듀서/컨슈머의 데이터 교환은 모두 Leader가 처리한다.
 
 ![replication 004-600x450](https://user-images.githubusercontent.com/52072077/183312686-4beb0b6c-8b27-45e6-bd5d-bd5521b8319a.jpeg)
+
+# Go로 Kafka Interface 만들기
+Kafka만으로 topic, partition, producer, consumer 등 다양한 설정들 및 테스트를 할 수 있지만 Go로 Kafka Interface를 직접 만들면서 사용해보려고 한다.
+
+## 1. Kafka 및 Zookeeper 실행
+설치는 생략함(만약 도커를 사용하려 한다면, 카프카 외에 주키퍼가 필요해서 도커 컴퍼즈를 사용해야 하니 웬만하면 주키퍼가 포함된 기본 Kafka를 설치하는 것 추천)
+
+Kafka를 설치한 경로에서 아래 명령어 각각 실행한다.
+
+```py
+# Background로 Zookeeper Cluster 실행, 기본 포트는 2181임.
+bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+
+# Background로 Kafka Cluster 실행, 기본 포트는 9092임.
+bin/kafka-server-start.sh -daemon config/server.properties
+```
+
+## 2. Kafka Interface Domain 
+```go
+package kafka_interface
+
+import (
+	"github.com/segmentio/kafka-go"
+	"github.com/segmentio/kafka-go/compress"
+)
+
+type brokers []string
+
+type KafkaSetting struct {
+	Network  string
+	Url      string
+	Broker   brokers
+	Topic    *topic
+	Producer *producer
+	Consumer *consumer
+}
+
+type topic struct {
+	Name              string
+	NumPartition      int
+	ReplicationFactor int
+}
+
+type producer struct {
+	BatchSize   int 
+	MaxAttempts int 
+	Compression kafka.Compression
+}
+
+type consumer struct {
+	MinBytes int
+	MaxBytes int
+}
+
+func GetDefaultKafkaSetting() *KafkaSetting {
+	return &KafkaSetting{
+		"tcp",
+		"localhost:9092",
+		brokers{"localhost:9092"},
+		&topic{
+			"levi-topic",
+			1,
+			1,
+		},
+		&producer{
+			16384,
+			1,
+			compress.Lz4,
+		},
+		&consumer{
+			0,
+			10e6,
+		},
+	}
+}
+```
+
+## 3. Kafka Topic 생성
+Topic을 생성하는 명령어와 로직이다.
+```
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic levi-topic
+```
+```go
+func CreateTopic(kafkaSetting *KafkaSetting, autoCreateEnable bool) {
+	if autoCreateEnable {
+		_, err := kafka.DialLeader(context.Background(), kafkaSetting.Network, kafkaSetting.Url, kafkaSetting.Topic.Name, kafkaSetting.Topic.NumPartition)
+		if err != nil {
+			panic(err.Error())
+		}
+	} else {
+		conn, err := kafka.Dial(kafkaSetting.Network, kafkaSetting.Url)
+		if err != nil {
+			panic(err.Error())
+		}
+		defer conn.Close()
+
+		controller, err := conn.Controller()
+		if err != nil {
+			panic(err.Error())
+		}
+		var controllerConn *kafka.Conn
+		controllerConn, err = kafka.Dial(kafkaSetting.Network, net.JoinHostPort(controller.Host, strconv.Itoa(controller.Port)))
+		if err != nil {
+			panic(err.Error())
+		}
+		defer controllerConn.Close()
+
+
+		topicConfigs := []kafka.TopicConfig{
+			{
+				Topic:             kafkaSetting.Topic.Name,
+				NumPartitions:     kafkaSetting.Topic.NumPartition,
+				ReplicationFactor: kafkaSetting.Topic.ReplicationFactor,
+			},
+		}
+
+		err = controllerConn.CreateTopics(topicConfigs...)
+		if err != nil {
+			panic(err.Error())
+		}
+	}
+}
+```
+
+## 4. Kafka Topic List
+```
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+```
+
+```go
+
+func GetTopics(kafkaSetting *KafkaSetting) map[string]struct{}{
+	conn, err := kafka.Dial(kafkaSetting.Network, kafkaSetting.Url)
+	if err != nil {
+		panic(err.Error())
+	}
+	defer conn.Close()
+
+	partitions, err := conn.ReadPartitions()
+	if err != nil {
+		panic(err.Error())
+	}
+
+	m := map[string]struct{}{}
+
+	for _, p := range partitions {
+		m[p.Topic] = struct{}{}
+	}
+
+	return m
+}
+
+func main() {
+    topic := kafka_interface.GetTopics(kafkaSetting)
+	for k := range topic {
+		fmt.Println(k)
+    }
+}
+```
+## 5. Kafka Consumer
+```
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic levi-topic
+```
+```go
+func CreateConsumer(kafkaSetting *KafkaSetting) *kafka.Reader {
+	return kafka.NewReader(kafka.ReaderConfig{
+		Brokers:   []string{kafkaSetting.Url},
+		Topic:     kafkaSetting.Topic.Name,
+		Partition: 0,
+		MinBytes:  kafkaSetting.Consumer.MinBytes, //10KB
+		MaxBytes:  kafkaSetting.Consumer.MaxBytes, //10MB
+	})
+}
+
+func main() {
+    consumer := kafka_interface.CreateConsumer(kafkaSetting)
+        consumer.SetOffset(0)
+        defer consumer.Close()
+        for {
+            data, err := consumer.ReadMessage(context.Background())
+            if err != nil {
+                break
+            }
+            fmt.Printf("message at offset %d: %s = %s\n", data.Offset, string(data.Key), string(data.Value))
+        }
+}
+```
+## 6. Kafka Producer
+```
+bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic levi-topic
+```
+```go
+func CreateProducer(kafkaSetting *KafkaSetting) *kafka.Writer {
+	return &kafka.Writer{
+		Addr:        kafka.TCP(kafkaSetting.Url),
+		Topic:       kafkaSetting.Topic.Name,
+		BatchSize:   kafkaSetting.Producer.BatchSize,
+		MaxAttempts: kafkaSetting.Producer.MaxAttempts,
+		Compression: kafkaSetting.Producer.Compression,
+		Balancer:    &kafka.LeastBytes{},
+	}
+}
+
+func main() {
+    producer := kafka_interface.CreateProducer(kafkaSetting)
+	defer producer.Close()
+	err := producer.WriteMessages(context.Background(),
+		kafka.Message{
+			Value: []byte("Hello World!"),
+		},
+		kafka.Message{
+			Value: []byte("One!"),
+		},
+		kafka.Message{
+			Value: []byte("Two!"),
+		},
+	)
+	if err != nil {
+		log.Fatal("failed to write messages:", err)
+	}
+}
+```
